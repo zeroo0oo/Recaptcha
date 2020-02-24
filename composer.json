@@ -21,7 +21,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Zero00oo\\ReCaptcha\\InvisibleReCaptchaServiceProvider"
+        "Zero0oo\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider"
       ]
     }
   }
