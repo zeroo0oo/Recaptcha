@@ -4,6 +4,7 @@ namespace Zeroo0oo\ReCaptcha;
 
 use Symfony\Component\HttpFoundation\Request;
 use GuzzleHttp\Client;
+use Illuminate\Support\Arr;
 
 class ReCaptcha
 {
@@ -54,18 +55,12 @@ class ReCaptcha
         $this->siteKey = $siteKey;
         $this->secretKey = $secretKey;
         $this->setOptions($options);
-        try{
 
-            $this->setClient(
-                new Client([
-                    'timeout' => $this->getOption('timeout', 5)
-                ])
-            );
-        }catch(\GuzzleHttp\Exception\ConnectException $exception){
-            return [
-                'error' => 1
-            ];
-        }
+        $this->setClient(
+            new Client([
+                'timeout' => $this->getOption('timeout', 5)
+            ])
+        );
     }
 
     /**
@@ -204,7 +199,7 @@ class ReCaptcha
             'response' => $response
         ]);
 
-        return isset($response['success']) && $response['success'] === true;
+        return Arr::get($response,'success',false);
     }
 
     /**
@@ -320,5 +315,16 @@ class ReCaptcha
     public function getClient()
     {
         return $this->client;
+    }
+
+    /**
+     * @param $data
+     * @param $key
+     * @param $default
+     * @return bool
+     */
+    public function getArr($data, $key, $default = false)
+    {
+        return key_exists($key, $data) ? $data[$key] : $default;
     }
 }

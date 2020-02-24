@@ -2,19 +2,20 @@
 
 return [
     // your recapthca site key.
-    'siteKey' => env('INVISIBLE_RECAPTCHA_SITEKEY'),
+    'siteKey'   => env('INVISIBLE_RECAPTCHA_SITEKEY'),
     // your recapthca secret key.
     'secretKey' => env('INVISIBLE_RECAPTCHA_SECRETKEY'),
     // other options to customize your configs
-    'options' => [
+    'options'   => [
         // set true if you want to hide your recaptcha badge
-        'hideBadge' => env('INVISIBLE_RECAPTCHA_BADGEHIDE', false),
+        'hideBadge'     => env('INVISIBLE_RECAPTCHA_BADGEHIDE', false),
         // optional, reposition the reCAPTCHA badge. 'inline' allows you to control the CSS.
         // available values: bottomright, bottomleft, inline
-        'dataBadge' => env('INVISIBLE_RECAPTCHA_DATABADGE', 'bottomright'),
+        'dataBadge'     => env('INVISIBLE_RECAPTCHA_DATABADGE', 'bottomright'),
         // timeout value for guzzle client
-        'timeout' => env('INVISIBLE_RECAPTCHA_TIMEOUT', 5),
+        'timeout'       => env('INVISIBLE_RECAPTCHA_TIMEOUT', 5),
         // set true to show binding status on your javascript console
-        'debug' => env('INVISIBLE_RECAPTCHA_DEBUG', false)
+        'debug'         => env('INVISIBLE_RECAPTCHA_DEBUG', false),
+        'http_errors'   => env('INVISIBLE_RECAPTCHA_HTTP_ERRORS', false)
     ]
 ];
