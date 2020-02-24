@@ -1,0 +1,28 @@
+{
+  "name": "Zeroo0oo/Recaptcha",
+  "description": "My first packagist package",
+  "type": "package",
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "license": "mit",
+  "authors": [
+    {
+      "name": "Zeroo0oo",
+      "email": "zeroo0oo.dev@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Zeroo0oo\\InvisibleReCaptcha\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Zero00oo\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider"
+      ]
+    }
+  }
+}
