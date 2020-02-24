@@ -1,5 +1,5 @@
 {
-  "name": "Zeroo0oo/Recaptcha",
+  "name": "zeroo0oo/recaptcha",
   "description": "My first packagist package",
   "type": "package",
   "require": {
