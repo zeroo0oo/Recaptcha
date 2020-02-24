@@ -15,13 +15,13 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "Zeroo0oo\\InvisibleReCaptcha\\": "src/"
+      "Zeroo0oo\\ReCaptcha\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Zero0oo\\InvisibleReCaptcha\\InvisibleReCaptchaServiceProvider"
+        "Zeroo0oo\\ReCaptcha\\ReCaptchaServiceProvider"
       ]
     }
   }

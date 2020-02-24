@@ -24,7 +24,7 @@ class CaptchaTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->captcha = new InvisibleReCaptcha(
+        $this->captcha = new ReCaptcha(
             static::SITE_KEY,
             static::SECRET_KEY,
             static::OPTIONS
@@ -76,7 +76,7 @@ class CaptchaTest extends TestCase
             __DIR__
         );
 
-        $serviceProvider = new InvisibleReCaptchaServiceProvider($app);
+        $serviceProvider = new ReCaptchaServiceProvider($app);
         $serviceProvider->addBladeDirective($blade);
 
         $result = $blade->compileString('@captcha()');

@@ -1,11 +1,11 @@
 <?php
 
-namespace Zeroo0oo\InvisibleReCaptcha;
+namespace Zeroo0oo\ReCaptcha;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
-class InvisibleReCaptchaServiceProvider extends ServiceProvider
+class ReCaptchaServiceProvider extends ServiceProvider
 {
     /**
      * Boot the services for the application.
@@ -28,7 +28,7 @@ class InvisibleReCaptchaServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('captcha', function ($app) {
-            return new InvisibleReCaptcha(
+            return new ReCaptcha(
                 $app['config']['captcha.siteKey'],
                 $app['config']['captcha.secretKey'],
                 $app['config']['captcha.options']
